@@ -1,0 +1,10 @@
+<h2>{{fighter.name | uppercase}} Details</h2>
+<div><span>Id: </span>{{fighter.id}}</div>
+<div>
+  <label>Name:
+    <input [(ngModel)]="fighter.name" placeholder="name"/>
+  </label>
+</div>
+<div><span>Style: </span>{{fighter.style}}</div>
+<div><span>Wins: </span>{{fighter.wins}}</div>
+<div><span>Loses: </span>{{fighter.loses}}</div>
