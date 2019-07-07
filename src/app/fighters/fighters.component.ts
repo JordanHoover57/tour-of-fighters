@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Fighter } from '../fighter';
+import { FIGHTERS } from '../mock-fighters'
 
 @Component({
   selector: 'app-fighters',
@@ -9,17 +10,19 @@ import { Fighter } from '../fighter';
 
 export class FightersComponent implements OnInit {
 
-fighter : Fighter = {
-  id : 1,
-  name : 'Jon Jones',
-  style : 'All - Around',
-  wins : 21,
-  loses : 0
-};
+  fighterArray = FIGHTERS;
+  
+  selectedFighter : Fighter;
+
+
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(fighter : Fighter){
+    this.selectedFighter = fighter;
   }
 
 }

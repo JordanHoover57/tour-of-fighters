@@ -1,10 +1,18 @@
-<h2>{{fighter.name | uppercase}} Details</h2>
-<div><span>Id: </span>{{fighter.id}}</div>
+<h2>My Fighters</h2>
+<ul class="fighters">
+  <li *ngFor="let f of fighterArray" 
+      (click)="onSelect(f)"
+      [class.selected]="f === selectedFighter">
+    <span class="badge">{{f.id}}</span>{{f.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedFighter">
+<h2>{{selectedFighter.name | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedFighter.id}}</div>
 <div>
-  <label>Name:
-    <input [(ngModel)]="fighter.name" placeholder="name"/>
+  <label>name:
+    <input [(ngModel)]="selectedFighter.name" placeholder="name"/>
   </label>
 </div>
-<div><span>Style: </span>{{fighter.style}}</div>
-<div><span>Wins: </span>{{fighter.wins}}</div>
-<div><span>Loses: </span>{{fighter.loses}}</div>
+</div>
