@@ -7,12 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedFighter">
-<h2>{{selectedFighter.name | uppercase}} Details</h2>
-<div><span>id: </span>{{selectedFighter.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="selectedFighter.name" placeholder="name"/>
-  </label>
-</div>
-</div>
+<app-fighter-detail [fighter] ="selectedFighter"></app-fighter-detail>

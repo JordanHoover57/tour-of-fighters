@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FightersComponent } from './fighters/fighters.component';
 
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { FighterDetailComponent } from './fighter-detail/fighter-detail.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FightersComponent
+    FightersComponent,
+    FighterDetailComponent
   ],
   imports: [
     BrowserModule,
