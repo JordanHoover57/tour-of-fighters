@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Fighter } from './fighter';
 import { FIGHTERS } from './mock-fighters';
+import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service'
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 @Injectable({
@@ -8,10 +11,12 @@ import { FIGHTERS } from './mock-fighters';
 })
 export class FighterService {
 
-  constructor() { }
+  constructor(private messageService : MessageService) { }
 
-getFighters() : Fighter[] {
-  return FIGHTERS;
+getFighters(): Observable<Fighter[]> {
+  //TODO: send the messate _after_ fetching the heroes
+  this.messageService.add('FighterService: fetched fighters');
+  return of(FIGHTERS);
 }
 
 }

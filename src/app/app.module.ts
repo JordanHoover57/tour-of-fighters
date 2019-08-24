@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FightersComponent } from './fighters/fighters.component';
 
 import { FormsModule } from '@angular/forms';
-import { FighterDetailComponent } from './fighter-detail/fighter-detail.component'; 
+import { FighterDetailComponent } from './fighter-detail/fighter-detail.component';
+import { MessagesComponent } from './messages/messages.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     FightersComponent,
-    FighterDetailComponent
+    FighterDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

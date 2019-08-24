@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Fighter } from '../fighter';
-import { FIGHTERS } from '../mock-fighters'
+import { FighterService } from '../fighter.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fighters',
@@ -10,15 +11,19 @@ import { FIGHTERS } from '../mock-fighters'
 
 export class FightersComponent implements OnInit {
 
-  fighterArray = FIGHTERS;
+  fighters : Fighter[];
   
   selectedFighter : Fighter;
 
-
-
-  constructor() { }
+  constructor(private fighterService : FighterService) { }
 
   ngOnInit() {
+    this.getFighters();
+  }
+
+  getFighters() : void {
+    this.fighterService.getFighters()
+      .subscribe((fighter) => this.fighters = fighter);
   }
 
   onSelect(fighter : Fighter){

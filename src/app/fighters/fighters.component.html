@@ -1,6 +1,6 @@
 <h2>My Fighters</h2>
 <ul class="fighters">
-  <li *ngFor="let f of fighterArray" 
+  <li *ngFor="let f of fighters" 
       (click)="onSelect(f)"
       [class.selected]="f === selectedFighter">
     <span class="badge">{{f.id}}</span>{{f.name}}
