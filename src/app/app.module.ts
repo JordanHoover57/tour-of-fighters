@@ -7,14 +7,16 @@ import { FightersComponent } from './fighters/fighters.component';
 
 import { FormsModule } from '@angular/forms';
 import { FighterDetailComponent } from './fighter-detail/fighter-detail.component';
-import { MessagesComponent } from './messages/messages.component'; 
+import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     FightersComponent,
     FighterDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

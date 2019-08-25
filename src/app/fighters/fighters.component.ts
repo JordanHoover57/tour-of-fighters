@@ -12,8 +12,6 @@ import { Observable } from 'rxjs';
 export class FightersComponent implements OnInit {
 
   fighters : Fighter[];
-  
-  selectedFighter : Fighter;
 
   constructor(private fighterService : FighterService) { }
 
@@ -25,9 +23,4 @@ export class FightersComponent implements OnInit {
     this.fighterService.getFighters()
       .subscribe((fighter) => this.fighters = fighter);
   }
-
-  onSelect(fighter : Fighter){
-    this.selectedFighter = fighter;
-  }
-
 }
