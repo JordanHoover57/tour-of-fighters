@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { FighterDetailComponent } from './fighter-detail/fighter-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+import { FighterSearchComponent } from './fighter-search/fighter-search.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FightersComponent,
     FighterDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    FighterSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

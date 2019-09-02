@@ -34,4 +34,9 @@ export class FighterDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save() : void {
+    this.fighterService.updateFighter(this.fighter)
+    .subscribe(() => this.goBack());
+  }
+
 }

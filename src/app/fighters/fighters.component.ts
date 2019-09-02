@@ -23,4 +23,18 @@ export class FightersComponent implements OnInit {
     this.fighterService.getFighters()
       .subscribe((fighter) => this.fighters = fighter);
   }
+
+  add(name : string): void {
+    name = name.trim();
+    if(!name) {return;}
+    this.fighterService.addFighter({name} as Fighter)
+    .subscribe(fighter => {
+      this.fighters.push(fighter);
+    });
+  }
+
+  delete(fighter : Fighter) : void {
+    this.fighters = this.fighters.filter(f => f !== fighter);
+    this.fighterService.deleteFighter(fighter).subscribe();
+  }
 }

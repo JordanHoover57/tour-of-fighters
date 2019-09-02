@@ -1,7 +1,15 @@
+<div>
+  <label>Fighter name:
+    <input #fighterName/>
+  </label>
+  <button (click)="add(fighterName.value); fighterName.value='' ">add</button>
+</div>
 <ul class="fighters">
   <li *ngFor="let fighter of fighters">
     <a routerLink="/detail/{{fighter.id}}">
       <span class="badge">{{fighter.id}}</span> {{fighter.name}}
     </a>
+    <button class="delete" title="delete fighter"
+    (click)="delete(fighter)">x</button>  
   </li>
 </ul>
